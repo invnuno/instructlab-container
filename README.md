@@ -2,7 +2,7 @@
 This repository contains the Containerfile to build a Container image using Podman with the necessary environment and dependencies to run InstructLab's AI models.
 
 ## 1. Build it
-To build the Docker image, run the following command:
+To build the Container image, run the following command:
 
 ```bash
 podman build -t instructlab:latest -f Containerfile .
