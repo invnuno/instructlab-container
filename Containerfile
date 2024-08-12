@@ -1,17 +1,16 @@
-#
-# FEDORA + INSTRUCTLAB
-#
-
-#
-# REFERENCES
-#
+# +----------------------+
+# | FEDORA + INSTRUCTLAB |
+# +----------------------+
 
 # Author: Nuno Carvalho - ncarvalh@redhat.com
 # Project: https://github.com/invnuno/instructlab-container
 # Image: https://registry.fedoraproject.org/repo/fedora/tags
 # InstructLab project: https://github.com/instructlab/instructlab
 
-# -- BUILD INSTRUCTIONS --
+
+# +--------------------+
+# | Build instructions |
+# +--------------------+
 # 1. Clone project
 # git clone https://github.com/invnuno/instructlab-container.git
 
@@ -22,7 +21,6 @@
 # +---------------------------+
 # | Build process starts here |
 # +---------------------------+
-
 # -- IMAGE --
 # Use the latest Fedora image
 FROM fedora:40
@@ -47,12 +45,17 @@ RUN ilab model download
 # Choose an alternative model by uncomment the line below. Do NOT forget to comment the line above. See also "Notes & TIPS" to add the option whe running the container:
 # RUN ilab model download --repository instructlab/granite-7b-lab-GGUF --filename=granite-7b-lab-Q4_K_M.gguf
 
-# -- RUN CONTAINER --
+
+# +---------------+
+# | Run container |
+# +---------------+
 # Run the container: podman run -d --restart always --name instructlab -p 8000:8000 instructlab:v1.0 ilab model serve
 
+
 # +--------------+
-# | NOTES & TIPS |
+# | Notes & Tips |
 # +--------------+
 
 # InstructLab ilab options
+#    ilab model download --repository instructlab/granite-7b-lab-GGUF --filename=granite-7b-lab-Q4_K_M.gguf
 #    ilab model serve --model-path models/<your model filename>
